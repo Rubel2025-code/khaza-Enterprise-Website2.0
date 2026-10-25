@@ -24,7 +24,7 @@ export default function FooterBottom() {
 
       {/* Made by Kryzotech */}
       <div className="flex items-center justify-center gap-1">
-        <span className="text-gray-800 font-medium">Made by</span>
+        <span className="text-gray-800 font-medium">Powered by</span>
         <img
           src={kryzotech}
           className="h-10 w-auto"
