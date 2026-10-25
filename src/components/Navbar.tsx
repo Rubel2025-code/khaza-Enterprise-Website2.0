@@ -6,8 +6,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
-  const isLoggedIn = false;
-  const userName = "";
+  const isLoggedIn: boolean = false;
+  const userName: string = "";
 
   const navItems = [
     { label: "Home", path: "/" },

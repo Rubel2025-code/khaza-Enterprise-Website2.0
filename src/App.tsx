@@ -25,7 +25,7 @@ function Layout() {
     <>
       {!isAuthPage && <SideMenu open={isMenuOpen} setOpen={setIsMenuOpen} />}
       <div className="min-h-screen flex flex-col">
-        {!isAuthPage && <Navbar setIsMenuOpen={setIsMenuOpen} />}
+        {!isAuthPage && <Navbar />}
 
         <main className="flex-grow">
           <Routes>
