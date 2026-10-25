@@ -57,118 +57,97 @@ export default function Home() {
             className="w-full max-w-7xl pl-10 md:pl-10 lg:pl-24
                        pr-60 grid grid-cols-1 md:grid-cols-2 gap-5 items-start pt-5"
           >
-            <div
-              id="booking-form"
-              className="rounded-2xl shadow-2xl p-6 md:p-8 bg-white w-full max-w-sm md:max-w-md"
-            >
-              <h2 className="text-[#8B1A3A] font-bold text-lg mb-5 tracking-wide uppercase">
-                Book Your Ride
-              </h2>
 
-              <div className="space-y-5">
+<div
+  id="booking-form"
+  className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/80 bg-white/95 p-6 shadow-[0_24px_70px_rgba(31,20,25,0.18)] backdrop-blur-xl sm:p-8"
+>
+  {/* Decorative brand accent */}
+  <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-[#6B1229] via-[#8B1A3A] to-[#C66A83]" />
 
+  <div className="mb-7">
+    <p className="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-[#8B1A3A]">
+      Khaza Enterprise
+    </p>
+    <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">
+      Book Your Ride
+    </h2>
+    <p className="mt-2 text-sm leading-relaxed text-gray-500">
+      Your journey starts with a few simple details.
+    </p>
+  </div>
 
-                {/* Pick-up Location */}
-                <div>
-                  <label className="block text-xs font-semibold text-gray-600 uppercase tracking-widest mb-1.5">
-                    Pick-up Location
-                  </label>
-                  <div className="relative">
-                    <CiLocationOn className="absolute top-1/2 -translate-y-1/2 left-3 text-gray-400 text-lg" />
-                    <input
-                      className="w-full border border-gray-200 rounded-xl py-3 pl-9 pr-3
-                                 text-sm text-gray-700 placeholder-gray-400
-                                 focus:outline-none focus:ring-2 focus:ring-[#8B1A3A]/30
-                                 focus:border-[#8B1A3A] transition"
-                      type="text"
-                      placeholder="Enter pick-up location"
-                    />
-                  </div>
-                </div>
+  <div className="space-y-5">
+    {/* Pick-up Location */}
+    <div>
+      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-gray-700">
+        Pick-up Location
+      </label>
+      <div className="group relative">
+        <CiLocationOn className="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-400 transition-colors group-focus-within:text-[#8B1A3A]" />
+        <input
+          type="text"
+          placeholder="Enter pick-up location"
+          className="w-full rounded-2xl border border-gray-200 bg-gray-50/70 py-4 pl-12 pr-4 text-sm text-gray-800 outline-none transition-all duration-300 placeholder:text-gray-400 hover:border-gray-300 focus:border-[#8B1A3A] focus:bg-white focus:ring-4 focus:ring-[#8B1A3A]/10"
+        />
+      </div>
+    </div>
 
-                {/* Drop-off Location */}
-                <div>
-                  <label className="block text-xs font-semibold text-gray-600 uppercase tracking-widest mb-1.5">
-                    Drop-off Location
-                  </label>
-                  <div className="relative">
-                    <CiLocationOn className="absolute top-1/2 -translate-y-1/2 left-3 text-gray-400 text-lg" />
-                    <input
-                      className="w-full border border-gray-200 rounded-xl py-3 pl-9 pr-3
-                                 text-sm text-gray-700 placeholder-gray-400
-                                 focus:outline-none focus:ring-2 focus:ring-[#8B1A3A]/30
-                                 focus:border-[#8B1A3A] transition"
-                      type="text"
-                      placeholder="Enter drop-off location"
-                    />
-                  </div>
-                </div>
+    {/* Drop-off Location */}
+    <div>
+      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-gray-700">
+        Drop-off Location
+      </label>
+      <div className="group relative">
+        <CiLocationOn className="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-gray-400 transition-colors group-focus-within:text-[#8B1A3A]" />
+        <input
+          type="text"
+          placeholder="Enter drop-off location"
+          className="w-full rounded-2xl border border-gray-200 bg-gray-50/70 py-4 pl-12 pr-4 text-sm text-gray-800 outline-none transition-all duration-300 placeholder:text-gray-400 hover:border-gray-300 focus:border-[#8B1A3A] focus:bg-white focus:ring-4 focus:ring-[#8B1A3A]/10"
+        />
+      </div>
+    </div>
 
-                {/* Date */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-widest mb-1.5">
-                      Start Date
-                    </label>
-                    <input
-                      type="date"
-                      className="w-full border border-gray-200 rounded-xl py-3 px-3
-                                 text-sm text-gray-700
-                                 focus:outline-none focus:ring-2 focus:ring-[#8B1A3A]/30
-                                 focus:border-[#8B1A3A] transition"
-                    />
-                  </div>
+    {/* Start Date */}
+    <div>
+      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-gray-700">
+        Start Date
+      </label>
+      <input
+        type="date"
+        className="w-full rounded-2xl border border-gray-200 bg-gray-50/70 px-4 py-4 text-sm text-gray-800 outline-none transition-all duration-300 hover:border-gray-300 focus:border-[#8B1A3A] focus:bg-white focus:ring-4 focus:ring-[#8B1A3A]/10"
+      />
+    </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-widest mb-1.5">
-                      End Date
-                    </label>
-                    <input
-                      type="date"
-                      className="w-full border border-gray-200 rounded-xl py-3 px-3
-                                 text-sm text-gray-700
-                                 focus:outline-none focus:ring-2 focus:ring-[#8B1A3A]/30
-                                 focus:border-[#8B1A3A] transition"
-                    />
-                  </div>
-                </div>
+    {/* Pick-up Time */}
+    <div>
+      <label className="mb-2 block text-xs font-bold uppercase tracking-[0.14em] text-gray-700">
+        Pick-up Time
+      </label>
+      <input
+        type="time"
+        className="w-full rounded-2xl border border-gray-200 bg-gray-50/70 px-4 py-4 text-sm text-gray-800 outline-none transition-all duration-300 hover:border-gray-300 focus:border-[#8B1A3A] focus:bg-white focus:ring-4 focus:ring-[#8B1A3A]/10"
+      />
+    </div>
 
-                {/* Time */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-widest mb-1.5">
-                      Pick-up Time
-                    </label>
-                    <input
-                      type="time"
-                      className="w-full border border-gray-200 rounded-xl py-3 px-3
-                                 text-sm text-gray-700
-                                 focus:outline-none focus:ring-2 focus:ring-[#8B1A3A]/30
-                                 focus:border-[#8B1A3A] transition"
-                    />
-                  </div>
+    {/* Search Button */}
+    <button
+      type="button"
+      className="group relative mt-3 flex w-full items-center justify-center gap-3 overflow-hidden rounded-2xl bg-gradient-to-r from-[#8B1A3A] to-[#6B1229] px-5 py-4 text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-lg shadow-[#8B1A3A]/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#8B1A3A]/30 active:translate-y-0"
+    >
+      <span className="absolute inset-0 translate-x-[-110%] bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover:translate-x-[110%]" />
+      <span className="relative">Search Cars</span>
+      <span className="relative text-lg transition-transform duration-300 group-hover:translate-x-1">
+        →
+      </span>
+    </button>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-600 uppercase tracking-widest mb-1.5">
-                      Drop-off Time
-                    </label>
-                    <input
-                      type="time"
-                      className="w-full border border-gray-200 rounded-xl py-3 px-3
-                                 text-sm text-gray-700
-                                 focus:outline-none focus:ring-2 focus:ring-[#8B1A3A]/30
-                                 focus:border-[#8B1A3A] transition"
-                    />
-                  </div>
-                </div>
+    <p className="pt-1 text-center text-xs text-gray-400">
+      Comfortable journeys. Reliable service.
+    </p>
+  </div>
+</div>
 
-                <button className="w-full bg-[#8B1A3A] hover:bg-[#6B1229] text-white
-                                   py-4 rounded-xl font-bold tracking-widest text-sm
-                                   transition-all duration-200 shadow-md hover:shadow-lg mt-1">
-                  SEARCH CAR
-                </button>
-              </div>
-            </div>
 
             {/* RIGHT - TEXT */}
             <div className="text-black p-4 rounded-xl border border-white/10 w-fit">
