@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative w-full min-h-screen overflow-hidden">
+      <section className="relative w-full min-h-[calc(100svh-5rem)] overflow-hidden">
 
 
         {/* Background image  */}
@@ -52,15 +52,17 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="relative z-10 h-full flex items-center">
-          <div
-            className="w-full max-w-7xl pl-10 md:pl-10 lg:pl-24
-                       pr-60 grid grid-cols-1 md:grid-cols-2 gap-5 items-start pt-5"
-          >
+        <div className="relative z-10 w-full flex items-center py-8 sm:py-10">
+  <div
+    className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10
+               grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8
+               items-center"
+  >
 
 <div
   id="booking-form"
-  className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/80 bg-white/95 p-6 shadow-[0_24px_70px_rgba(31,20,25,0.18)] backdrop-blur-xl sm:p-8"
+  className="w-full max-w-md mx-auto md:mx-0 rounded-2xl
+             shadow-2xl p-4 sm:p-6 md:p-8 bg-white"
 >
   {/* Decorative brand accent */}
   <div className="absolute left-0 top-0 h-1.5 w-full bg-gradient-to-r from-[#6B1229] via-[#8B1A3A] to-[#C66A83]" />
@@ -150,18 +152,19 @@ export default function Home() {
 
 
             {/* RIGHT - TEXT */}
-            <div className="text-black p-4 rounded-xl border border-white/10 w-fit">
+            <div className="text-black p-3 sm:p-4 rounded-xl
+                border border-white/10 w-full max-w-xl mx-auto">
               <p className="text-red-400 font-semibold tracking-widest text-sm md:text-base">
                 PREMIUM CAR RENTAL
               </p>
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
                 RENT A CAR <br />
                 <span className="text-red-500">IN DHAKA</span>
               </h1>
               <p className="text-black-800 text-lg mt-3 max-w-md leading-relaxed">
                 Reliable and comfortable transport service. Book your car now and travel with ease.
               </p>
-              <div className="flex gap-4 text-xs text-red-500 font-medium">
+              <div className="flex flex-wrap gap-2 sm:gap-3 text-xs text-red-500 font-medium">
                 <span className="bg-white/10 px-2 py-1 rounded-md">✔ Trusted Service</span>
                 <span className="bg-white/10 px-2 py-1 rounded-md">✔ 24/7 Support</span>
                 <span className="bg-white/10 px-2 py-1 rounded-md">✔ Wide Range</span>
