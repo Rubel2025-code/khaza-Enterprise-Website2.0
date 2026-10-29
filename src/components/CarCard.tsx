@@ -1,212 +1,177 @@
+
 import React from "react";
 import type { Car } from "../types/car.types";
 
 const COLORS = {
-  dark: "#111827",
-  black05: "rgba(0, 0, 0, 0.05)",
-  black70: "rgba(0, 0, 0, 0.7)",
-  black55: "rgba(0, 0, 0, 0.55)",
-  white85: "rgba(255, 255, 255, 0.85)",
-  white60: "rgba(255, 255, 255, 0.6)",
-  white50: "rgba(255, 255, 255, 0.5)",
-  white90: "rgba(255, 255, 255, 0.9)",
-  white: "#ffffff",
-  accent: "#38bdf8",
-  primary: "#4b091a",
+  black: "#4A0D20",
+blackSoft: "#5A1028",
+  red: "#E31E24",
+  redDark: "#B5121B",
+  white: "#FFFFFF",
+  muted: "#B8B8B8",
+  border: "rgba(255,255,255,0.12)",
 };
 
-const FONTS = {
-  condensed: "Inter, sans-serif",
-  regular: "Inter, sans-serif",
+const iconStyle: React.CSSProperties = {
+  width: 17,
+  height: 17,
+  flexShrink: 0,
+  color: COLORS.red,
 };
-
-const FONT_WEIGHTS = {
-  black: 900,
-  extrabold: 800,
-  semibold: 600,
-  medium: 500,
-  normal: 400,
-};
-
-const SPACING = {
-  xs: 8,
-  sm: 12,
-  md: 16,
-  lg: 24,
-  xl: 32,
-  xxl: 36,
-};
-
-const BORDER_RADIUS = {
-  sm: 8,
-  xxxl: 32,
-};
-
-const TRANSITIONS = {
-  slow: "0.35s",
-  slower: "0.45s",
-  cubic: "cubic-bezier(0.22, 1, 0.36, 1)",
-  easeOut: "ease-out",
-};
-
-const SHADOWS = {
-  lg: "0 20px 40px rgba(0, 0, 0, 0.12)",
-  xxl: "0 30px 60px rgba(0, 0, 0, 0.18)",
-};
-
-
-
-//Icons
 
 const FuelIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 22V6a2 2 0 012-2h8a2 2 0 012 2v16" />
-    <path d="M3 11h12" />
-    <path d="M15 6h2a2 2 0 012 2v3a2 2 0 002 2v5a2 2 0 01-4 0v-5a2 2 0 000-4V7" />
+  <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 22V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v17" />
+    <path d="M3 10h12M7 6h4" />
+    <path d="M15 7h2l3 3v8a2 2 0 0 0 4 0v-7l-3-3" />
   </svg>
 );
 
 const DoorIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <rect x="3" y="2" width="18" height="20" rx="2" />
     <circle cx="15" cy="12" r="1" fill="currentColor" />
   </svg>
 );
 
 const PeopleIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+  <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
     <circle cx="9" cy="7" r="4" />
-    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
   </svg>
 );
 
 const GearIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg style={iconStyle} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="3" />
-    <path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M4.93 19.07l1.41-1.41M19.07 19.07l-1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2" />
+    <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 2.94-.09-.03a1.7 1.7 0 0 0-1.83.34l-.07.06h-3.4l-.03-.09a1.7 1.7 0 0 0-1.4-1.2l-.09-.01-2.94-1.7.03-.09a1.7 1.7 0 0 0-.34-1.83l-.06-.07v-3.4l.09-.03a1.7 1.7 0 0 0 1.2-1.4l.01-.09 1.7-2.94.09.03a1.7 1.7 0 0 0 1.83-.34l.07-.06h3.4l.03.09a1.7 1.7 0 0 0 1.4 1.2l.09.01 2.94 1.7-.03.09a1.7 1.7 0 0 0 .34 1.83l.06.07v3.4z" transform="translate(-2 -2) scale(1.16)" />
+    <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
   </svg>
 );
 
-//  Styles 
-
 const styles: Record<string, React.CSSProperties> = {
   card: {
-    background: COLORS.dark,
-    borderRadius: BORDER_RADIUS.xxxl,
+    width: "100%",
+    minWidth: 0,
+    background: COLORS.black,
+    borderRadius: 26,
     overflow: "hidden",
     cursor: "pointer",
-    position: "relative",
-    transition: `transform ${TRANSITIONS.slow} ${TRANSITIONS.cubic}, box-shadow ${TRANSITIONS.slow}`,
     display: "flex",
     flexDirection: "column",
+    border: "1px solid rgba(0,0,0,0.06)",
+    transition: "transform 350ms cubic-bezier(0.22,1,0.36,1), box-shadow 350ms ease",
+    boxShadow: "0 12px 30px rgba(0,0,0,0.10)",
   },
-  imgWrap: {
+  imageWrap: {
     position: "relative",
-    height: 240,
+    height: 245,
     overflow: "hidden",
+    background: "#EDEDED",
     flexShrink: 0,
   },
-  img: {
+  image: {
+    display: "block",
     width: "100%",
     height: "100%",
     objectFit: "cover",
-    transition: `transform ${TRANSITIONS.slower} ${TRANSITIONS.easeOut}`,
-    display: "block",
+    objectPosition: "center",
+    transition: "transform 550ms cubic-bezier(0.22,1,0.36,1)",
   },
-  overlay: {
+  categoryBadge: {
     position: "absolute",
-    inset: 0,
-    background: `linear-gradient(to bottom, ${COLORS.black05} 0%, ${COLORS.black70} 100%)`,
-    pointerEvents: "none",
-  },
-  badge: {
-    position: "absolute",
-    top: SPACING.md,
-    left: SPACING.md,
-    background: COLORS.black55,
-    backdropFilter: "blur(4px)",
-    color: COLORS.white85,
-    fontFamily: FONTS.condensed,
-    fontSize: 11,
-    fontWeight: FONT_WEIGHTS.black,
-    letterSpacing: "1.5px",
-    textTransform: "uppercase",
-    padding: `${SPACING.xs}px ${SPACING.sm}px`,
-    borderRadius: BORDER_RADIUS.sm,
-  },
-  titleArea: {
-    position: "absolute",
-    bottom: SPACING.lg,
-    left: SPACING.lg,
-    right: SPACING.lg,
-  },
-  grupo: {
-    color: COLORS.white60,
-    fontSize: 11,
-    fontWeight: FONT_WEIGHTS.semibold,
-    letterSpacing: "1.5px",
-    textTransform: "uppercase",
-    marginBottom: SPACING.xs,
-    fontFamily: FONTS.condensed,
-  },
-  carName: {
-    fontFamily: FONTS.condensed,
-    fontSize: 26,
-    fontWeight: FONT_WEIGHTS.black,
+    top: 16,
+    left: 16,
+    padding: "9px 14px",
+    borderRadius: 10,
+    background: "rgba(139,26,58,0.88)",
     color: COLORS.white,
-    lineHeight: 1,
-    margin: 0,
+    fontSize: 11,
+    fontWeight: 800,
+    letterSpacing: "1.5px",
+    textTransform: "uppercase",
+    backdropFilter: "blur(8px)",
   },
-  carNameAccent: {
-    color: COLORS.accent,
+  details: {
+    padding: "22px 22px 24px",
+    background: "linear-gradient(145deg, #5A1028, #4A0D20)",
+    color: COLORS.white,
+    display: "flex",
+    flexDirection: "column",
+    gap: 0,
+    flex: 1,
+  },
+  group: {
+    margin: 0,
+    color: "#D0D0D0",
+    fontSize: 11,
+    fontWeight: 700,
+    letterSpacing: "2px",
+    textTransform: "uppercase",
+  },
+  accentLine: {
+    width: 42,
+    height: 3,
+    borderRadius: 4,
+    background: COLORS.red,
+    marginTop: 9,
+    marginBottom: 12,
+  },
+  title: {
+    margin: 0,
+    fontSize: "clamp(22px, 2vw, 28px)",
+    lineHeight: 1.15,
+    fontWeight: 900,
+    letterSpacing: "-0.5px",
+    overflowWrap: "anywhere",
+  },
+  brand: {
+    color: COLORS.white,
+  },
+  model: {
+    color: COLORS.red,
   },
   similar: {
-    color: COLORS.white50,
+    margin: "7px 0 0",
     fontSize: 12,
-    marginTop: SPACING.xs,
-    fontFamily: FONTS.regular,
+    color: COLORS.muted,
   },
-  footer: {
-    background: COLORS.primary,
-    padding: `${SPACING.md}px ${SPACING.lg}px`,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    flexShrink: 0,
+  divider: {
+    height: 1,
+    background: COLORS.border,
+    margin: "20px 0",
   },
   specs: {
-    display: "flex",
-    gap: SPACING.xxl,
-    alignItems: "center",
-    flexWrap: "wrap",
+    display: "grid",
+    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+    columnGap: 12,
+    rowGap: 20,
   },
-  specItem: {
+  spec: {
+    minWidth: 0,
     display: "flex",
     alignItems: "center",
-    gap: SPACING.xs,
-    color: COLORS.white90,
+    gap: 9,
+    color: "#F4F4F4",
     fontSize: 12,
-    fontWeight: FONT_WEIGHTS.medium,
-    fontFamily: FONTS.regular,
+    fontWeight: 500,
+    lineHeight: 1.4,
   },
-  price: {
-    fontFamily: FONTS.condensed,
-    fontWeight: FONT_WEIGHTS.extrabold,
-    fontSize: 18,
-    color: COLORS.white,
-    letterSpacing: "-0.5px",
-    whiteSpace: "nowrap",
+  specLabel: {
+    minWidth: 0,
+    overflowWrap: "anywhere",
   },
-  priceSmall: {
-    fontSize: 11,
-    fontWeight: FONT_WEIGHTS.normal,
-    opacity: 0.75,
+  transmission: {
+    display: "flex",
+    alignItems: "center",
+    gap: 9,
+    marginTop: 21,
+    color: "#F4F4F4",
+    fontSize: 12,
+    fontWeight: 500,
   },
 };
-
-
-//  Component
 
 interface CarCardProps {
   car: Car;
@@ -217,59 +182,79 @@ const CarCard: React.FC<CarCardProps> = ({ car, onClick }) => {
   const [hovered, setHovered] = React.useState(false);
 
   return (
-    <div
+    <article
       style={{
         ...styles.card,
-        transform: hovered ? "translateY(-6px)" : "translateY(0)",
-        boxShadow: hovered ? SHADOWS.xxl : SHADOWS.lg,
+        transform: hovered ? "translateY(-5px)" : "translateY(0)",
+        boxShadow: hovered
+          ? "0 24px 48px rgba(0,0,0,0.18)"
+          : "0 12px 30px rgba(0,0,0,0.10)",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={() => onClick(car)}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onClick(car);
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${car.brand} ${car.model}`}
     >
-      
-      {/* Image */}
-
-      <div style={styles.imgWrap}>
+      {/* Clean vehicle image */}
+      <div style={styles.imageWrap}>
         <img
-          src={car.images[0]}
+          src={car.images?.[0]}
           alt={`${car.brand} ${car.model}`}
+          loading="lazy"
           style={{
-            ...styles.img,
-            transform: hovered ? "scale(1.06)" : "scale(1)",
+            ...styles.image,
+            transform: hovered ? "scale(1.045)" : "scale(1)",
           }}
         />
-        <div style={styles.overlay} />
-        <div style={styles.badge}>{car.category}</div>
-        <div style={styles.titleArea}>
-          <p style={styles.grupo}>{car.group}</p>
-          <h3 style={styles.carName}>
-            {car.brand}{" "}
-            <span style={styles.carNameAccent}>{car.model}</span>
-          </h3>
-          <p style={styles.similar}>or similar</p>
-        </div>
+
+        <span style={styles.categoryBadge}>{car.category}</span>
       </div>
 
-      {/* Footer */}
-      
-      <div style={styles.footer}>
+      {/* Vehicle title and specifications below the image */}
+      <div style={styles.details}>
+        <p style={styles.group}>{car.group || car.category}</p>
+        <div style={styles.accentLine} />
+
+        <h3 style={styles.title}>
+          <span style={styles.brand}>{car.brand} </span>
+          <span style={styles.model}>{car.model}</span>
+        </h3>
+
+        <p style={styles.similar}>Or similar vehicle</p>
+
+        <div style={styles.divider} />
+
         <div style={styles.specs}>
-          <span style={styles.specItem}>
-            <FuelIcon /> {car.fuel}
-          </span>
-          <span style={styles.specItem}>
-            <DoorIcon /> {car.doors} Doors
-          </span>
-          <span style={styles.specItem}>
-            <PeopleIcon /> {car.people} People
-          </span>
-          <span style={styles.specItem}>
-            <GearIcon /> {car.transmission}
-          </span>
+          <div style={styles.spec}>
+            <FuelIcon />
+            <span style={styles.specLabel}>{car.fuel}</span>
+          </div>
+
+          <div style={styles.spec}>
+            <DoorIcon />
+            <span style={styles.specLabel}>{car.doors} Doors</span>
+          </div>
+
+          <div style={styles.spec}>
+            <PeopleIcon />
+            <span style={styles.specLabel}>{car.people} People</span>
+          </div>
+        </div>
+
+        <div style={styles.transmission}>
+          <GearIcon />
+          <span>{car.transmission}</span>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

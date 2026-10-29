@@ -1,13 +1,14 @@
+import rentHero from "../assets/images/rent-hero.jpg";
 export default function HeroRent() {
   return (
     <section className="relative w-full h-[360px] sm:h-[360px] md:h-[420px] lg:h-[460px] overflow-hidden">
 
       {/* Background Image */}
       <img
-        src="https://wallpaperaccess.com/full/2102370.jpg"
-        alt="Rent a Vehicle"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+  src={rentHero}
+  alt="Khaza Enterprise vehicle rental"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50" />
