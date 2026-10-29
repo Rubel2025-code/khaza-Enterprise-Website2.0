@@ -13,7 +13,7 @@ const headingClass =
 
 export default function Footer() {
   return (
-    <footer className="bg-[#C41E3A] text-white">
+    <footer className="bg-[#800020] text-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12 lg:px-10 lg:py-14">
 
         {/* COMPANY */}
